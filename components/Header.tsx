@@ -1,6 +1,11 @@
-import Link from './Link';
+import Link from "./Link"
 
-Link;
+const MENUS = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/skills", text: "Skills" },
+  { href: "/projects", text: "Projects" },
+]
 
 export default function Header() {
   return (
@@ -26,18 +31,11 @@ export default function Header() {
           </div>
           <nav className="hidden md:flex md:flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
-              <li>
-                <Link href="/" text="Home" />
-              </li>
-              <li>
-                <Link href="/about" text="About" />
-              </li>
-              <li>
-                <Link href="/skills" text="Skills" />
-              </li>
-              <li>
-                <Link href="/projects" text="Projects" />
-              </li>
+              {MENUS.map(({ href, text }) => (
+                <li key={href}>
+                  <Link href={href} text={text} />
+                </li>
+              ))}
               <li>
                 <a
                   className="text-white bg-neutral-900 hover:bg-neutral-800 dark:bg-blue-700 ml-3 dark:hover:bg-blue-600 py-2 px-4 rounded inline-flex items-center"
@@ -59,7 +57,7 @@ export default function Header() {
             </ul>
           </nav>
           <div className="flex md:hidden">
-            <button className="hamburger " aria-controls="mobile-nav">
+            <button className="hamburger" aria-controls="mobile-nav">
               <span className="sr-only">Menu</span>
               <svg
                 className="w-6 h-6 fill-black dark:fill-white text-neutral-900"
@@ -76,52 +74,22 @@ export default function Header() {
               className="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white transition-all duration-300 backdrop-blur shadow-lg dark:bg-neutral-900/90 ease-in-out "
             >
               <ul className="px-5 py-2">
+                {MENUS.map(({ href, text }) => (
+                  <li key={href}>
+                    <a
+                      className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400"
+                      href={href}
+                    >
+                      {text}
+                    </a>
+                  </li>
+                ))}
                 <li>
                   <a
-                    className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400"
-                    href="/"
+                    className="btn-sm text-neutral-200 bg-neutral-900 hover:bg-neutral-800 w-full dark:bg-blue-700 dark:hover:bg-blue-800 my-2 py-2 px-4 rounded inline-flex items-center"
+                    href="/contact"
                   >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400"
-                    href="/book"
-                  >
-                    Book
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400"
-                    href="/about"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400"
-                    href="/resources"
-                  >
-                    Resources
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400"
-                    href="/insights"
-                  >
-                    Insights
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="btn-sm text-neutral-200 bg-neutral-900 hover:bg-neutral-800 w-full dark:bg-blue-700 dark:hover:bg-blue-800 my-2"
-                    href="/posts"
-                  >
-                    <span>Get Started</span>
+                    <span>Contact</span>
                     <svg
                       className="w-3 h-3 fill-white text-neutral-400 flex-shrink-0 ml-2 -mr-1"
                       viewBox="0 0 12 12"
@@ -140,5 +108,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }
