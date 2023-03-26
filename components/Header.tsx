@@ -1,4 +1,5 @@
-import Link from "./Link"
+import Menu from "./Menu"
+import { ArrowRightIcon, HamburgerIcon } from "./Icons"
 
 const MENUS = [
   { href: "/", text: "Home" },
@@ -29,81 +30,13 @@ export default function Header() {
               </svg>
             </a>
           </div>
-          <nav className="hidden md:flex md:flex-grow">
-            <ul className="flex flex-grow justify-end flex-wrap items-center">
-              {MENUS.map(({ href, text }) => (
-                <li key={href}>
-                  <Link href={href} text={text} />
-                </li>
-              ))}
-              <li>
-                <a
-                  className="text-white bg-neutral-900 hover:bg-neutral-800 dark:bg-blue-700 ml-3 dark:hover:bg-blue-600 py-2 px-4 rounded inline-flex items-center"
-                  href="/contact"
-                >
-                  <span>Contact</span>
-                  <svg
-                    className="w-3 h-3 fill-white text-neutral-400 flex-shrink-0 ml-2 -mr-1"
-                    viewBox="0 0 12 12"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                      fill-rule="nonzero"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <Menu />
           <div className="flex md:hidden">
             <button className="hamburger" aria-controls="mobile-nav">
               <span className="sr-only">Menu</span>
-              <svg
-                className="w-6 h-6 fill-black dark:fill-white text-neutral-900"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect y="4" width="24" height="2"></rect>
-                <rect y="11" width="24" height="2"></rect>
-                <rect y="18" width="24" height="2"></rect>
-              </svg>
+              <HamburgerIcon />
             </button>
-            <nav
-              id="mobile-nav"
-              className="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white transition-all duration-300 backdrop-blur shadow-lg dark:bg-neutral-900/90 ease-in-out "
-            >
-              <ul className="px-5 py-2">
-                {MENUS.map(({ href, text }) => (
-                  <li key={href}>
-                    <a
-                      className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400"
-                      href={href}
-                    >
-                      {text}
-                    </a>
-                  </li>
-                ))}
-                <li>
-                  <a
-                    className="btn-sm text-neutral-200 bg-neutral-900 hover:bg-neutral-800 w-full dark:bg-blue-700 dark:hover:bg-blue-800 my-2 py-2 px-4 rounded inline-flex items-center"
-                    href="/contact"
-                  >
-                    <span>Contact</span>
-                    <svg
-                      className="w-3 h-3 fill-white text-neutral-400 flex-shrink-0 ml-2 -mr-1"
-                      viewBox="0 0 12 12"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                        fill-rule="nonzero"
-                      ></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            <Menu />
           </div>
         </div>
       </div>
