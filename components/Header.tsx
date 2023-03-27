@@ -1,14 +1,16 @@
-import Menu from "./Menu"
-import { ArrowRightIcon, HamburgerIcon } from "./Icons"
+"use client"
 
-const MENUS = [
-  { href: "/", text: "Home" },
-  { href: "/about", text: "About" },
-  { href: "/skills", text: "Skills" },
-  { href: "/projects", text: "Projects" },
-]
+import { useState } from "react"
+
+import Menu from "./Menu"
+import { HamburgerIcon } from "./Icons"
+
+import styles from "./header.module.css"
 
 export default function Header() {
+  useState
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <header className="fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out bg-white backdrop-blur shadow-lg dark:bg-neutral-900">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
@@ -30,14 +32,18 @@ export default function Header() {
               </svg>
             </a>
           </div>
-          <Menu />
-          <div className="flex md:hidden">
-            <button className="hamburger" aria-controls="mobile-nav">
-              <span className="sr-only">Menu</span>
-              <HamburgerIcon />
-            </button>
-            <Menu />
-          </div>
+
+          <button
+            className={`flex md:hidden ${styles.hamburger} ${
+              menuOpen ? styles.active : ""
+            }`}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span className="sr-only">Menu</span>
+            <HamburgerIcon />
+          </button>
+          <Menu isMenuActive={menuOpen} />
         </div>
       </div>
     </header>

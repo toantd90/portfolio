@@ -1,0 +1,35 @@
+.hamburger svg>:first-child,
+.hamburger svg>:nth-child(2),
+.hamburger svg>:nth-child(3) {
+  transform-origin: center
+}
+
+.hamburger svg>:first-child {
+  transition: y .1s ease-in .25s, transform .22s cubic-bezier(.55, .055, .675, .19), opacity .1s ease-in
+}
+
+.hamburger svg>:nth-child(2) {
+  transition: transform .22s cubic-bezier(.55, .055, .675, .19)
+}
+
+.hamburger svg>:nth-child(3) {
+  transition: y .1s ease-in .25s, transform .22s cubic-bezier(.55, .055, .675, .19), width .1s ease-in .25s
+}
+
+.hamburger.active svg>:first-child {
+  opacity: 0;
+  y: 11;
+  transform: rotate(225deg);
+  transition: y .1s ease-out, transform .22s cubic-bezier(.215, .61, .355, 1) .12s, opacity .1s ease-out .12s
+}
+
+.hamburger.active svg>:nth-child(2) {
+  transform: rotate(225deg);
+  transition: transform .22s cubic-bezier(.215, .61, .355, 1) .12s
+}
+
+.hamburger.active svg>:nth-child(3) {
+  y: 11;
+  transform: rotate(135deg);
+  transition: y .1s ease-out, transform .22s cubic-bezier(.215, .61, .355, 1) .12s, width .1s ease-out
+}
