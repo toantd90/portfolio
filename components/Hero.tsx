@@ -1,12 +1,16 @@
 const Hero = () => (
   <div className="text-white mx-auto max-w-screen-xl py-32 sm:pb-32 sm:pt-24">
     <div className="max-w-6xl mx-auto px-5 sm:px-6">
-      <h3 className="text-2xl font-semibold dark:text-neutral-200">
+      <h3 className="text-2xl font-semibold text-neutral-600 dark:text-neutral-200">
         Hi there, 👋 I&#39;m
       </h3>
-      <h1 className="block bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-left animate-text">
-        Toan Tran
-      </h1>
+      <div className="flex place-items-center">
+        <h1 className=" bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-left animate-text">
+          Toan Tran
+        </h1>
+        <span className="ml-2 mt-2">(He/Him)</span>
+      </div>
+
       <ul role="list" className="grid gap-4 grid-flow-col items-center max-w-md">
         <li>
           <a
@@ -19,7 +23,7 @@ const Hero = () => (
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="hover:fill-current stroke-2 stroke-current fill-none w-9 h-9"
+              className="hover:fill-black hover:stroke-black dark:hover:fill-current dark:hover:stroke-current stroke-2 stroke-black dark:stroke-gray-500 fill-none w-9 h-9"
               viewBox="0 0 24 24"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -33,14 +37,14 @@ const Hero = () => (
           <a
             href="https://twitter.com/toantd90"
             className="px-2"
-            aria-label="Toan's twitter account"
-            title="Toan's twitter account"
+            aria-label="Toan's twitter"
+            title="Toan's twitter"
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="hover:fill-current stroke-2 stroke-current fill-none w-9 h-9"
+              className="hover:fill-black hover:stroke-black dark:hover:fill-current dark:hover:stroke-current stroke-2 stroke-black dark:stroke-gray-500 fill-none w-9 h-9"
               viewBox="0 0 24 24"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -54,14 +58,14 @@ const Hero = () => (
           <a
             href="https://leetcode.com/annietran/"
             className="px-2"
-            aria-label="Toan's leetcode account"
-            title="Toan's leetcode account"
+            aria-label="Toan's leetcode"
+            title="Toan's leetcode"
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="hover:fill-current stroke-1 stroke-current fill-none w-8 h-8"
+              className="hover:fill-black hover:stroke-black dark:hover:fill-current dark:hover:stroke-current stroke-1 stroke-black dark:stroke-gray-500 fill-none w-8 h-8"
               viewBox="0 0 24 24"
             >
               <path d="M22,14.355c0-0.742-0.564-1.346-1.26-1.346H10.676c-0.696,0-1.26,0.604-1.26,1.346s0.563,1.346,1.26,1.346H20.74C21.436,15.702,22,15.098,22,14.355z"></path>
@@ -78,7 +82,7 @@ const Hero = () => (
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="hover:sepia stroke-1 stroke-current fill-none w-9 h-9"
+              className="hover:fill-current hover:stroke-current stroke-1 stroke-gray-500 fill-none w-9 h-9"
               viewBox="0 0 24 24"
             >
               <path
@@ -92,18 +96,39 @@ const Hero = () => (
           <a
             href="https://www.linkedin.com/in/toan-tran-duc/"
             className="px-2"
-            aria-label="Toan's LinkedIn account"
-            title="Toan's LinkedIn account"
+            aria-label="Toan's LinkedIn"
+            title="Toan's LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="hover:sepia stroke-1 stroke-current fill-none w-9 h-9"
-              viewBox="0 0 24 24"
-              id="linkedin"
+              className="hover:fill-current hover:stroke-current stroke-2 stroke-gray-500 fill-none w-9 h-9"
+              viewBox="0 0 50 50"
             >
-              <path d="M7.5006104,9C7.5003662,9,7.5001831,9,7.5,9h-4C3.223999,8.9998169,3.0001831,9.2234497,3,9.4993896C3,9.4996338,3,9.4998169,3,9.5v12c-0.0001831,0.276001,0.2234497,0.4998169,0.4993896,0.5C3.4996338,22,3.4998169,22,3.5,22h4c0.276001,0.0001831,0.4998169-0.2234497,0.5-0.4994507C8,21.5003662,8,21.5001831,8,21.5v-12C8.0001831,9.223999,7.7765503,9.0001831,7.5006104,9z M7,21H4V10h3V21z M18,9c-1.0848389,0.000061-2.1393433,0.3580933-3,1.0185547V9.5c0.0001831-0.276001-0.2234497-0.4998169-0.4993896-0.5C14.5003662,9,14.5001831,9,14.5,9h-4c-0.276001-0.0001831-0.4998169,0.2234497-0.5,0.4993896C10,9.4996338,10,9.4998169,10,9.5v12c-0.0001831,0.276001,0.2234497,0.4998169,0.4994507,0.5c0.0001831,0,0.0003662,0,0.0005493,0h4c0.276001,0.0001831,0.4998169-0.2234497,0.5-0.4994507c0-0.0001831,0-0.0003662,0-0.0005493V16c0-0.8284302,0.6715698-1.5,1.5-1.5S18,15.1715698,18,16v5.5c-0.0001831,0.276001,0.2234497,0.4998169,0.4994507,0.5c0.0001831,0,0.0003662,0,0.0005493,0h4c0.276001,0.0001831,0.4998169-0.2234497,0.5-0.4994507c0-0.0001831,0-0.0003662,0-0.0005493V14C22.9967651,11.2399292,20.7600708,9.0032349,18,9z M22,21h-3v-5c0-1.3807373-1.1192627-2.5-2.5-2.5S14,14.6192627,14,16v5h-3V10h3v1.203125c0,0.2124634,0.1343994,0.4016724,0.335022,0.4716797c0.2001343,0.0721436,0.4240112,0.0079956,0.5556641-0.1591797c1.3625488-1.7268066,3.8669434-2.0220337,5.59375-0.6594238C21.4462891,11.6152344,22.0053101,12.7747192,22,14V21z M5.867981,2.0018311C5.7503662,1.9935913,5.6323242,1.992981,5.5146484,2C4.0053711,1.8969116,2.6983032,3.0368652,2.5952148,4.5461426c-0.0041504,0.06073-0.0062256,0.121521-0.0063477,0.182373c-0.0130005,1.49646,1.1895752,2.7200928,2.6860352,2.7330933c0.0610962,0.0005493,0.1221313-0.0010376,0.1831055-0.0046387h0.0283203c1.5064087,0.1054077,2.8129883-1.0303345,2.918396-2.5367432S7.3743896,2.1072388,5.867981,2.0018311z M5.8334351,6.4598389C5.7179565,6.470459,5.6016235,6.4695435,5.4863281,6.4569702H5.4580078C4.5018921,6.5304565,3.6672974,5.8150024,3.593811,4.8588867C3.5203247,3.902832,4.2357788,3.0681763,5.1918945,2.9946899C5.2994385,2.9864502,5.4074707,2.9882202,5.5146484,3C6.4700317,2.9119873,7.315918,3.6151123,7.4039917,4.5704956C7.4920044,5.5259399,6.7888794,6.3718262,5.8334351,6.4598389z"></path>
+              <path d="M 8 3.0117188 C 6.3243556 3.0117186 4.8517223 3.4556501 3.7636719 4.3105469 C 2.6756214 5.1654436 2.0117188 6.4640138 2.0117188 7.9003906 C 2.0117188 10.773144 4.6048 12.988281 8 12.988281 C 9.7412258 12.988281 11.234704 12.477413 12.304688 11.5625 C 13.374671 10.647587 13.988281 9.3224486 13.988281 7.9003906 A 0.98809878 0.98809878 0 0 0 13.986328 7.8554688 C 13.861647 5.1114423 11.373244 3.0117188 8 3.0117188 z M 8 4.9882812 C 10.612452 4.9882814 11.919564 6.27684 12.007812 7.9199219 C 12.002386 8.7882363 11.669223 9.5069667 11.019531 10.0625 C 10.364515 10.622587 9.3587742 11.011719 8 11.011719 C 5.3952 11.011719 3.9882813 9.627637 3.9882812 7.9003906 C 3.9882812 7.0367674 4.3243786 6.3853376 4.9863281 5.8652344 C 5.6482777 5.3451311 6.6756444 4.9882813 8 4.9882812 z M 3 15 A 1.0001 1.0001 0 0 0 2 16 L 2 45 A 1.0001 1.0001 0 0 0 3 46 L 13 46 A 1.0001 1.0001 0 0 0 14 45 L 14 35.699219 L 14 16 A 1.0001 1.0001 0 0 0 13 15 L 3 15 z M 18 15 A 1.0001 1.0001 0 0 0 17 16 L 17 45.099609 A 1.0001 1.0001 0 0 0 18 46.099609 L 28 46.099609 A 1.0001 1.0001 0 0 0 29 45.099609 L 29 29.099609 L 29 28.800781 L 29 28.5 C 29 26.533333 30.533333 25 32.5 25 C 34.466667 25 36 26.533333 36 28.5 L 36 45 A 1.0001 1.0001 0 0 0 37 46 L 47 46 A 1.0001 1.0001 0 0 0 48 45 L 48 28 C 48 23.855907 46.781684 20.586343 44.736328 18.361328 C 42.690972 16.136313 39.844829 15 36.800781 15 C 32.892578 15 30.522592 16.421774 29 17.583984 L 29 16 A 1.0001 1.0001 0 0 0 28 15 L 18 15 z M 4 17 L 12 17 L 12 35.699219 L 12 44 L 4 44 L 4 17 z M 19 17 L 27 17 L 27 19.599609 A 1.0001 1.0001 0 0 0 28.736328 20.275391 C 28.736328 20.275391 31.737145 17 36.800781 17 C 39.356734 17 41.609028 17.914859 43.263672 19.714844 C 44.918316 21.514828 46 24.244093 46 28 L 46 44 L 38 44 L 38 28.5 A 1.0001 1.0001 0 0 0 37.916016 28.089844 C 37.6949 25.257915 35.387842 23 32.5 23 C 29.466667 23 27 25.466667 27 28.5 L 27 28.800781 L 27 29.099609 L 27 44.099609 L 19 44.099609 L 19 17 z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://stackoverflow.com/users/3766872/toan-tran"
+            className="px-2"
+            aria-label="Toan's StackOverflow"
+            title="Toan's StackOverflow"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="hover:fill-current hover:stroke-current stroke-2 stroke-gray-500 fill-none w-9 h-9"
+              viewBox="0 0 120 120"
+            >
+              <path class="st0" d="M84.4 93.8V70.6h7.7v30.9H22.6V70.6h7.7v23.2z" />
+              <path
+                class="st1"
+                d="M38.8 68.4l37.8 7.9 1.6-7.6-37.8-7.9-1.6 7.6zm5-18l35 16.3 3.2-7-35-16.4-3.2 7.1zm9.7-17.2l29.7 24.7 4.9-5.9-29.7-24.7-4.9 5.9zm19.2-18.3l-6.2 4.6 23 31 6.2-4.6-23-31zM38 86h38.6v-7.7H38V86z"
+              />
             </svg>
           </a>
         </li>
@@ -113,7 +138,7 @@ const Hero = () => (
           id="patterns-headline"
           className="text-xl text-neutral-600 mb-8 dark:text-neutral-200"
         >
-          Senior Front-End Software Engineer who love building products
+          Senior Front-End Focused Software Engineer
         </p>
       </div>
     </div>
