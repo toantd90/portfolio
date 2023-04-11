@@ -1,6 +1,8 @@
+import Image from "next/image"
+
 const Hero = () => (
-  <div className="text-white mx-auto max-w-screen-xl py-32 sm:pb-32 sm:pt-24">
-    <div className="max-w-6xl mx-auto px-5 sm:px-6">
+  <div className="mx-auto max-w-6xl px-5 py-32 mt-32 sm:pb-32 sm:pt-24 flex justify-between items-center">
+    <div>
       <h3 className="text-2xl font-semibold text-neutral-600 dark:text-neutral-200">
         Hi there, 👋 I&#39;m
       </h3>
@@ -124,11 +126,8 @@ const Hero = () => (
               className="hover:fill-current hover:stroke-current stroke-2 stroke-gray-500 fill-none w-9 h-9"
               viewBox="0 0 120 120"
             >
-              <path class="st0" d="M84.4 93.8V70.6h7.7v30.9H22.6V70.6h7.7v23.2z" />
-              <path
-                class="st1"
-                d="M38.8 68.4l37.8 7.9 1.6-7.6-37.8-7.9-1.6 7.6zm5-18l35 16.3 3.2-7-35-16.4-3.2 7.1zm9.7-17.2l29.7 24.7 4.9-5.9-29.7-24.7-4.9 5.9zm19.2-18.3l-6.2 4.6 23 31 6.2-4.6-23-31zM38 86h38.6v-7.7H38V86z"
-              />
+              <path d="M84.4 93.8V70.6h7.7v30.9H22.6V70.6h7.7v23.2z" />
+              <path d="M38.8 68.4l37.8 7.9 1.6-7.6-37.8-7.9-1.6 7.6zm5-18l35 16.3 3.2-7-35-16.4-3.2 7.1zm9.7-17.2l29.7 24.7 4.9-5.9-29.7-24.7-4.9 5.9zm19.2-18.3l-6.2 4.6 23 31 6.2-4.6-23-31zM38 86h38.6v-7.7H38V86z" />
             </svg>
           </a>
         </li>
@@ -142,6 +141,12 @@ const Hero = () => (
         </p>
       </div>
     </div>
+    <Image
+      src="/images/joy-developer.png"
+      alt="Picture of the author"
+      width={500}
+      height={500}
+    />
   </div>
 )
 

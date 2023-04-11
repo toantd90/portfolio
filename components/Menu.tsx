@@ -5,7 +5,7 @@ import styles from "./menu.module.css"
 
 const MENUS = [
   { href: "/", text: "Home" },
-  { href: "/about", text: "About" },
+  { href: "#about-me", text: "About" },
   { href: "/skills", text: "Skills" },
   { href: "/projects", text: "Projects" },
 ]
