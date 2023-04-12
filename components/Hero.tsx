@@ -1,11 +1,9 @@
 import Image from "next/image"
+import { Underline } from "./Icons"
 
 const Hero = () => (
-  <div className="mx-auto max-w-6xl px-5 py-32 mt-32 sm:pb-32 sm:pt-24 flex justify-between items-center">
-    <div>
-      <h3 className="text-2xl font-semibold text-neutral-600 dark:text-neutral-200">
-        Hi there, 👋 I&#39;m
-      </h3>
+  <div className="flex flex-col-reverse justify-between items-center  px-5 py-24 mx-auto max-w-6xl md:flex-row md:py-32 sm:pb-32 sm:pt-24 ">
+    <div className="flex justify-center flex-col place-items-center">
       <div className="flex place-items-center">
         <h1 className=" bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-left animate-text">
           Toan Tran
@@ -132,16 +130,15 @@ const Hero = () => (
           </a>
         </li>
       </ul>
-      <div>
-        <p
+        <strong
           id="patterns-headline"
-          className="text-xl text-neutral-600 mb-8 dark:text-neutral-200"
+          className="text-xl text-center text-neutral-600 mb-8 dark:text-neutral-200"
         >
-          Senior Front-End Focused Software Engineer
-        </p>
-      </div>
+          Front-End <span className="relative">Software Engineer <Underline className="absolute"/></span>
+        </strong>
     </div>
     <Image
+      className="mb-5"
       src="/images/joy-developer.png"
       alt="Picture of the author"
       width={500}
