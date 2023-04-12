@@ -1,6 +1,6 @@
 import { CircleIcon } from "./Icons"
 
-const AboutMeContents: React.ReactElement[] = [
+const AboutMeContents: React.ReactNode[] = [
   <>
     Experienced software engineer with{" "}
     <span className="relative inline-block mx-3">
@@ -13,7 +13,7 @@ const AboutMeContents: React.ReactElement[] = [
   "Passionate about Javascript programming for web, mobile, desktop apps.",
 ]
 
-const FunFacts: React.ReactElement[] = [
+const FunFacts: React.ReactNode[] = [
   "🌱 Growth mindset, 🧠 Lifelong learner.",
   "📚 Books lover.",
   <>
@@ -43,7 +43,7 @@ const FunFacts: React.ReactElement[] = [
 const About = () => (
   <div
     id="about-me"
-    className="text-white mx-auto max-w-screen-xl py-32 sm:pb-32 sm:pt-24"
+    className="text-white mx-auto max-w-screen-xl py-32 sm:pb-16 sm:pt-16"
   >
     <div className="max-w-6xl mx-auto px-5 sm:px-6">
       <h1 className="block bg-clip-text text-transparent font-bold text-2xl sm:text-3xl lg:text-3xl tracking-tight pb-4 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">

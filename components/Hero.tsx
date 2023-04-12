@@ -2,7 +2,7 @@ import Image from "next/image"
 import { UnderlineIcon } from "./Icons"
 
 const Hero = () => (
-  <div className="flex flex-col-reverse justify-between items-center  px-5 py-24 mx-auto max-w-6xl md:flex-row md:py-32 sm:pb-32 sm:pt-24 ">
+  <div className="flex flex-col-reverse justify-between items-center px-5 py-24 mx-auto max-w-6xl md:flex-row sm:pb-12 sm:pt-24">
     <div className="flex justify-center flex-col place-items-center">
       <div className="flex place-items-center">
         <h1 className=" bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-left animate-text">
@@ -130,12 +130,15 @@ const Hero = () => (
           </a>
         </li>
       </ul>
-        <strong
-          id="patterns-headline"
-          className="text-xl text-center text-neutral-600 mb-8 dark:text-neutral-200"
-        >
-          Front-End <span className="relative">Software Engineer <UnderlineIcon className="absolute"/></span>
-        </strong>
+      <strong
+        id="patterns-headline"
+        className="text-xl text-center text-neutral-600 mb-8 dark:text-neutral-200"
+      >
+        Front-End{" "}
+        <span className="relative">
+          Software Engineer <UnderlineIcon />
+        </span>
+      </strong>
     </div>
     <Image
       className="mb-5"
