@@ -8,8 +8,11 @@ import { HamburgerIcon } from "./Icons"
 import styles from "./header.module.css"
 
 export default function Header() {
-  useState
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleOnMenuClick = () => {
+    setMenuOpen(!menuOpen)
+  }
 
   return (
     <header className="fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out false">
@@ -47,7 +50,7 @@ export default function Header() {
             <span className="sr-only">Menu</span>
             <HamburgerIcon />
           </button>
-          <Menu isMenuActive={menuOpen} />
+          <Menu isMenuActive={menuOpen} onMenuClick={handleOnMenuClick} />
         </div>
       </div>
     </header>

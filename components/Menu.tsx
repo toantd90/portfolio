@@ -12,9 +12,11 @@ const MENUS = [
 
 type Props = {
   isMenuActive: boolean
+  onMenuClick: () => void
 }
 
-export default function Menu({ isMenuActive }: Props) {
+export default function Menu({ isMenuActive, onMenuClick }: Props) {
+
   return (
     <nav
       id="mobile-nav"
@@ -25,7 +27,7 @@ export default function Menu({ isMenuActive }: Props) {
       <ul className="px-5 py-2 md:flex flex-grow justify-end flex-wrap items-center">
         {MENUS.map(({ href, text }) => (
           <li key={href}>
-            <Link href={href} text={text} />
+            <Link href={href} text={text} onClick={onMenuClick} />
           </li>
         ))}
         <li>
