@@ -106,7 +106,7 @@ const Skills = () => (
       </h1>
       {skills.map(({ section, technologies }, sectionIndex) => (
         <div key={`section-${sectionIndex}`} className="my-9">
-          <p className="mt-2 tracking-tight text-gray-400 text-xl">{section}</p>
+          <p className="mt-2 tracking-tigh text-xl text-neutral-600 dark:text-neutral-200">{section}</p>
           <dl className="grid grid-cols-2 gap-8 mt-4 md:space-y-0 md:grid-cols-3 xl:grid-cols-5 md:gap-x-8 md:gap-y-10 md:mt-8">
             {technologies.map(({ imageUrl, text }, index) => (
               <div key={`technology-${index}`} className="relative">

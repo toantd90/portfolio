@@ -7,7 +7,7 @@ const Projects = () => (
         Projects
       </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-        <article className="bg-gray-800 overflow-hidden rounded-lg border border-gray-700 p-4 shadow-sm transition hover:shadow-primary cursor-default">
+        <article className="dark:bg-gray-800 overflow-hidden rounded-lg border border-gray-100 dark:border-gray-700 p-4 shadow-sm transition hover:shadow-primary hover:border-gray-300 cursor-default">
           <a
             href="https://manage.travel.rakuten.com/"
             className="block overflow-hidden group mb-4 rounded-lg"
@@ -26,6 +26,7 @@ const Projects = () => (
           </a>
           <h3 className="font-bold text-2xl text-white tracking-tight my-2 transition duration-500 hover:underline hover:underline-offset-4">
             <a
+              className="text-neutral-600 dark:text-neutral-200"
               href="https://manage.travel.rakuten.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -33,13 +34,13 @@ const Projects = () => (
               Rakuten Travel - Supplier site
             </a>
           </h3>
-          <p className="font-light text-gray-400 mb-4">
+          <p className="font-light text-neutral-600 dark:text-neutral-200 mb-4">
             An user-friendly platform streamlines travel bookings, offers tools for
             inventory management, booking tracking, and performance insights in one place,
             saving you time and hassle. Sign in now.
           </p>
         </article>
-        <article className="bg-gray-800 overflow-hidden rounded-lg border border-gray-700 p-4 shadow-sm transition hover:shadow-primary cursor-default">
+        <article className="dark:bg-gray-800 overflow-hidden rounded-lg border border-gray-100 dark:border-gray-700 p-4 shadow-sm transition hover:shadow-primary hover:border-gray-300 cursor-default">
           <a
             href="https://travel.rakuten.com/"
             className="block overflow-hidden group mb-4 rounded-lg"
@@ -58,6 +59,7 @@ const Projects = () => (
           </a>
           <h3 className="font-bold text-2xl text-white tracking-tight my-2 transition duration-500 hover:underline hover:underline-offset-4">
             <a
+              className="text-neutral-600 dark:text-neutral-200"
               href="https://travel.rakuten.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -65,7 +67,7 @@ const Projects = () => (
               Rakuten Travel - Japan&#39;s largest online travel site
             </a>
           </h3>
-          <p className="font-light text-gray-400 mb-4">
+          <p className="font-light text-neutral-600 dark:text-neutral-200 mb-4">
             One of Japan&#39;s leading hotel booking platforms. Find and book quality
             accommodations for your next trip to Japan. Rakuten Travel makes it easy to
             find a place that meets your personal needs.
