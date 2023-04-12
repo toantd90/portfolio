@@ -141,7 +141,6 @@ const Hero = () => (
       </strong>
     </div>
     <Image
-      className="mb-5"
       src="/images/joy-developer.png"
       alt="Picture of the author"
       width={500}
