@@ -33,7 +33,7 @@ export default function Menu({ isMenuActive, onMenuClick }: Props) {
         <li>
           <a
             className="btn-sm text-neutral-200 bg-neutral-900 hover:bg-neutral-800 w-full dark:bg-blue-700 dark:hover:bg-blue-800 my-2 py-2 px-4 rounded inline-flex items-center"
-            href="/contact"
+            href="#contact"
           >
             <span>Contact</span>
             <ArrowRightIcon />
