@@ -59,7 +59,7 @@ const About = () => (
           </li>
         ))}
       </ul>
-      <h2 className="text-xl mb-3">⚡ Fun fact</h2>
+      <h2 className="text-xl mb-3 text-neutral-600 dark:text-neutral-200">⚡ Fun fact</h2>
       <ul className="marker:text-slate-400 list-disc  pl-5 space-y-3 mb-8">
         {FunFacts.map((fact, index) => (
           <li

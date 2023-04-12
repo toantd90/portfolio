@@ -120,7 +120,7 @@ const Skills = () => (
                       src={imageUrl}
                     />
                   </div>
-                  <p className="ml-10 text-lg leading-6 font-medium text-gray-100 md:ml-16">
+                  <p className="ml-10 text-lg leading-6 font-medium text-neutral-600 dark:text-neutral-200 md:ml-16">
                     {text}
                   </p>
                 </dt>
