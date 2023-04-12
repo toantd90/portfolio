@@ -1,4 +1,4 @@
-export default function HamburgerIcon() {
+export default function Hamburger() {
   return (
     <svg
       className="w-6 h-6 fill-black dark:fill-white text-neutral-900"

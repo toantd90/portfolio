@@ -1,16 +1,43 @@
-const ABOUT_ME_CONTENTS = [
-  "Experienced software engineer with 10+ years in web, desktop, mobile.",
+import { CircleIcon } from "./Icons"
+
+const AboutMeContents: React.ReactElement[] = [
+  <>
+    Experienced software engineer with{" "}
+    <span className="relative inline-block mx-3">
+      10+ years
+      <CircleIcon />
+    </span>{" "}
+    in web, desktop, mobile.
+  </>,
   "Most recently a Front-end developer at Rakuten, creating modern, responsive and highly interactive web apps.",
   "Passionate about Javascript programming for web, mobile, desktop apps.",
 ]
 
-const FUN_FACTS = [
+const FunFacts: React.ReactElement[] = [
   "🌱 Growth mindset, 🧠 Lifelong learner.",
   "📚 Books lover.",
-  "🎓 Online courses learner.",
-  "🤓 Doing algorithm almost everyday for fun.",
+  <>
+    🎓 Online courses learner with{" "}
+    <a
+      className="underline underline-offset-2 decoration-sky-400 decoration-2"
+      href="https://frontendmasters.com/u/toantd/"
+    >
+      Frontend Masters
+    </a>
+    , Udemy, Coursera
+  </>,
+  <>
+    🤓 Doing{" "}
+    <a
+      className="underline underline-offset-2 decoration-sky-400 decoration-2"
+      href="https://leetcode.com/annietran/"
+    >
+      algorithm
+    </a>{" "}
+    almost everyday for fun.
+  </>,
   "🏋️‍♂️ 🏃‍♂️ Mediocre weight lifter and runner.",
-  "📈 Obsessed with productivity improve: 🧘‍♂️ Meditation, 🚿❄️ Cold shower, ☀️ Sunlight exposure, 🍅⏰ Pomodoro technique"
+  "📈 Obsessed with productivity improve: 🧘‍♂️ Meditation, 🚿❄️ Cold shower, 🌅 Sunlight exposure, 🍅⏰ Pomodoro technique",
 ]
 
 const About = () => (
@@ -23,7 +50,7 @@ const About = () => (
         About Me
       </h1>
       <ul className="marker:text-slate-400 list-disc  pl-5 space-y-3 mb-8">
-        {ABOUT_ME_CONTENTS.map((content, index) => (
+        {AboutMeContents.map((content, index) => (
           <li
             key={`about-me-${index}`}
             className="text-xl text-neutral-600 dark:text-neutral-200"
@@ -34,7 +61,7 @@ const About = () => (
       </ul>
       <h2 className="text-xl mb-3">⚡ Fun fact</h2>
       <ul className="marker:text-slate-400 list-disc  pl-5 space-y-3 mb-8">
-        {FUN_FACTS.map((fact, index) => (
+        {FunFacts.map((fact, index) => (
           <li
             key={`about-me-fact-${index}`}
             className="text-l text-neutral-600 dark:text-neutral-200"

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Underline } from "./Icons"
+import { UnderlineIcon } from "./Icons"
 
 const Hero = () => (
   <div className="flex flex-col-reverse justify-between items-center  px-5 py-24 mx-auto max-w-6xl md:flex-row md:py-32 sm:pb-32 sm:pt-24 ">
@@ -134,7 +134,7 @@ const Hero = () => (
           id="patterns-headline"
           className="text-xl text-center text-neutral-600 mb-8 dark:text-neutral-200"
         >
-          Front-End <span className="relative">Software Engineer <Underline className="absolute"/></span>
+          Front-End <span className="relative">Software Engineer <UnderlineIcon className="absolute"/></span>
         </strong>
     </div>
     <Image

@@ -1,4 +1,4 @@
-export default function ArrowRightIcon() {
+export default function ArrowRight() {
   return (
     <svg
       className="w-3 h-3 fill-white text-neutral-400 flex-shrink-0 ml-2 -mr-1"

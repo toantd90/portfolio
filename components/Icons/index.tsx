@@ -1,5 +1,6 @@
 import HamburgerIcon from "./Hamburger"
 import ArrowRightIcon from "./ArrowRight"
-import Underline from "./Underline"
+import UnderlineIcon from "./Underline"
+import CircleIcon from './Circle'
 
-export { ArrowRightIcon, HamburgerIcon, Underline }
+export { ArrowRightIcon, HamburgerIcon, UnderlineIcon, CircleIcon }
