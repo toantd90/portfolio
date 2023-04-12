@@ -99,7 +99,7 @@ const skills = [
 ]
 
 const Skills = () => (
-  <div id="skills" className="text-white mx-auto max-w-screen-xl py-32 sm:py-16">
+  <div id="skills" className="text-white mx-auto max-w-screen-xl py-32 sm:py-8">
     <div className="max-w-6xl mx-auto px-5 sm:px-6">
       <h1 className="block bg-clip-text text-transparent font-bold text-2xl sm:text-3xl lg:text-3xl tracking-tight bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
         Skills
