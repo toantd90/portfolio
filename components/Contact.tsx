@@ -62,6 +62,7 @@ const Contact = () => (
           </form>
         </div>
         <Image
+          className="md:max-w-[50%]"
           src="/images/get-in-touch.png"
           alt="Get in touch"
           width={500}
