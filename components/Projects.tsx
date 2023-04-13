@@ -7,7 +7,7 @@ const Projects = () => (
         Projects
       </h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-        <article className="dark:bg-gray-800 overflow-hidden rounded-lg border border-gray-100 dark:border-gray-700 p-4 shadow-sm transition hover:shadow-primary hover:border-gray-300 cursor-default">
+        <article className="dark:bg-gray-800 overflow-hidden rounded-lg border border-gray-300 dark:border-gray-700 p-4 shadow-sm transition hover:shadow-primary hover:border-zinc-400 cursor-default">
           <a
             href="https://manage.travel.rakuten.com/"
             className="block overflow-hidden group mb-4 rounded-lg"
@@ -40,7 +40,7 @@ const Projects = () => (
             saving you time and hassle. Sign in now.
           </p>
         </article>
-        <article className="dark:bg-gray-800 overflow-hidden rounded-lg border border-gray-100 dark:border-gray-700 p-4 shadow-sm transition hover:shadow-primary hover:border-gray-300 cursor-default">
+        <article className="dark:bg-gray-800 overflow-hidden rounded-lg border border-gray-300 dark:border-gray-700 p-4 shadow-sm transition hover:shadow-primary hover:border-zinc-400 cursor-default">
           <a
             href="https://travel.rakuten.com/"
             className="block overflow-hidden group mb-4 rounded-lg"
