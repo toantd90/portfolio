@@ -7,14 +7,14 @@ function contact(req, res) {
     host: "smtp.gmail.com",
     auth: {
       user: "toandummymail@gmail.com",
-      pass: process.env.password,
+      pass: process.env.APP_PASSWORD,
     },
     secure: true,
   })
   const mailData = {
-    from: "demo email",
+    from: req.body.email,
     to: "toantdfu@gmail.com",
-    subject: `Message From ${req.body.name}`,
+    subject: `Message From ${req.body.name}: ${req.body.subject}`,
     text: req.body.message + " | Sent from: " + req.body.email,
     html: `<div>${req.body.message}</div><p>Sent from:
     ${req.body.email}</p>`,
@@ -23,7 +23,7 @@ function contact(req, res) {
     if (err) console.log(err)
     else console.log(info)
   })
-  res.status(200).send('OK')
+  res.status(200).send("OK")
   res.end()
 }
 
