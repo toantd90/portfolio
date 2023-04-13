@@ -8,8 +8,8 @@ export default function Circle() {
       className="absolute top-0 -left-4 bottom-0 w-[calc(100%_+_2rem)] h-8 stroke-violet-500"
     >
       <path
-        stroke-linecap="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeWidth="2"
         d="M43.276 47.002s-39.06-.82-42-18.5c-3.217-19.34 22.395-27.374 42-27.5 17.922-.115 40.766 4.594 40 22.5-.788 18.404-44 17-44 17"
       ></path>
     </svg>
