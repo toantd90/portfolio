@@ -24,6 +24,9 @@ dependencies:
     version: 4.9.5
 
 devDependencies:
+  '@vercel/analytics':
+    specifier: ^0.1.11
+    version: 0.1.11(react@18.2.0)
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.21)
@@ -327,6 +330,14 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.57.1
       eslint-visitor-keys: 3.4.0
+    dev: true
+
+  /@vercel/analytics@0.1.11(react@18.2.0):
+    resolution: {integrity: sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
     dev: true
 
   /acorn-jsx@5.3.2(acorn@8.8.2):
@@ -2085,7 +2096,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
