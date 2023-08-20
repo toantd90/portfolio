@@ -1,3 +1,5 @@
+import Script from "next/script"
+
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
@@ -15,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <Script src="/theme.js" strategy="beforeInteractive" />
       </body>
     </html>
   )

@@ -3,12 +3,15 @@
 import { useState } from "react"
 
 import Menu from "./Menu"
-import { HamburgerIcon } from "./Icons"
+import { HamburgerIcon, SunIcon, MoonIcon } from "./Icons"
+
+import useDarkMode from "@/hooks/useDarkMode"
 
 import styles from "./header.module.css"
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [colorTheme, setTheme] = useDarkMode()
 
   const handleOnMenuClick = () => {
     setMenuOpen(!menuOpen)
@@ -17,8 +20,8 @@ export default function Header() {
   return (
     <header className="fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out false">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20 md:backdrop-blur">
-          <div className="flex-shrink-0">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex-shrink-0 md:backdrop-blur h-[72px] flex items-center">
             <a className="block" aria-label="Cruip" href="/">
               <svg
                 width="123"
@@ -39,17 +42,26 @@ export default function Header() {
               </svg>
             </a>
           </div>
-
-          <button
-            className={`flex md:hidden ${styles.hamburger} ${
-              menuOpen ? styles.active : ""
-            }`}
-            aria-controls="mobile-nav"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span className="sr-only">Menu</span>
-            <HamburgerIcon />
-          </button>
+          <div className="flex md:order-3">
+            <div className="mr-4 sm:mr-0">
+              <span className="sr-only">Switch theme</span>
+              {colorTheme === "light" ? (
+                <SunIcon onClick={() => setTheme("light")} />
+              ) : (
+                <MoonIcon onClick={() => setTheme("dark")} />
+              )}
+            </div>
+            <button
+              className={`flex md:hidden ${styles.hamburger} ${
+                menuOpen ? styles.active : ""
+              }`}
+              aria-controls="mobile-nav"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <span className="sr-only">Menu</span>
+              <HamburgerIcon />
+            </button>
+          </div>
           <Menu isMenuActive={menuOpen} onMenuClick={handleOnMenuClick} />
         </div>
       </div>
