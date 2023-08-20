@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { Inter } from "next/font/google"
 
 import Hero from "../components/Hero"
@@ -16,6 +17,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <Analytics />
     </div>
   )
 }

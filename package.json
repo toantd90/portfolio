@@ -18,6 +18,7 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@vercel/analytics": "^0.1.11",
     "autoprefixer": "^10.4.14",
     "dotenv": "^16.0.3",
     "eslint": "8.35.0",

@@ -15,7 +15,15 @@ const AboutMeContents: React.ReactNode[] = [
 
 const FunFacts: React.ReactNode[] = [
   "🌱 Growth mindset, 🧠 Lifelong learner.",
-  "📚 Books lover.",
+  <>
+    📚 Books lover{" "}
+    <a
+      className="underline underline-offset-2 decoration-sky-400 decoration-2"
+      href="https://puffy-anchovy-013.notion.site/546e2ca8394243faa5808b2995a1bbe2"
+    >
+      ( what I am reading )
+    </a>
+  </>,
   <>
     🎓 Online courses learner with{" "}
     <a
@@ -27,24 +35,21 @@ const FunFacts: React.ReactNode[] = [
     , Udemy, Coursera
   </>,
   <>
-    🤓 Doing{" "}
+    🤓 Challenge my brain with{" "}
     <a
       className="underline underline-offset-2 decoration-sky-400 decoration-2"
       href="https://leetcode.com/annietran/"
     >
-      algorithm
+      LeetCode problems
     </a>{" "}
-    almost everyday for fun.
+    on a daily basis.
   </>,
   "🏋️‍♂️ 🏃‍♂️ Mediocre weight lifter and runner.",
   "📈 Obsessed with productivity improve: 🧘‍♂️ Meditation, 🚿❄️ Cold shower, 🌅 Sunlight exposure, 🍅⏰ Pomodoro technique",
 ]
 
 const About = () => (
-  <div
-    id="about-me"
-    className="text-white mx-auto max-w-screen-xl py-32 sm:py-8"
-  >
+  <div id="about-me" className="text-white mx-auto max-w-screen-xl py-32 sm:py-8">
     <div className="max-w-6xl mx-auto px-5 sm:px-6">
       <h1 className="block bg-clip-text text-transparent font-bold text-2xl sm:text-3xl lg:text-3xl tracking-tight pb-4 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
         About Me
