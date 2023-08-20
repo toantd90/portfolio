@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out false backdrop-blur`}
+      className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out false bg-white dark:bg-neutral-900/90 backdrop-blur`}
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">

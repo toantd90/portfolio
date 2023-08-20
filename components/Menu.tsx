@@ -19,7 +19,9 @@ export default function Menu({ isMenuActive, onMenuClick }: Props) {
   return (
     <nav
       id="mobile-nav"
-      className={`backdrop-blur md:opacity-100 md:visible ${isMenuActive ? styles.active : ""} ${
+      className={`md:opacity-100 md:visible ${isMenuActive ? styles.active : ""} ${
+        isMenuActive ? "bg-white dark:bg-neutral-900/90" : ""
+      } ${
         styles.nav
       } absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll transition-all duration-300 ease-in-out md:flex-grow  md:pb-0 md:w-auto md:overflow-hidden md:h-auto md:static`}
     >
