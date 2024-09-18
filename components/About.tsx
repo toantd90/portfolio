@@ -4,12 +4,12 @@ const AboutMeContents: React.ReactNode[] = [
   <>
     Experienced software engineer with{" "}
     <span className="relative inline-block mx-3">
-      10+ years
+      11+ years
       <CircleIcon />
     </span>{" "}
     in web, desktop, mobile.
   </>,
-  "Most recently a Front-end developer at Rakuten, creating modern, responsive and highly interactive web apps.",
+  "Most recently a Tech Lead at Zeals, creating modern, responsive and highly interactive web apps.",
   "Passionate about Javascript programming for web, mobile, desktop apps.",
 ]
 
@@ -25,14 +25,21 @@ const FunFacts: React.ReactNode[] = [
     </a>
   </>,
   <>
-    🎓 Online courses learner with{" "}
+    🎓 Online courses learner with Frontend Masters (switching between{" "}
     <a
       className="underline underline-offset-2 decoration-sky-400 decoration-2"
       href="https://frontendmasters.com/u/toantd/"
     >
-      Frontend Masters
-    </a>
-    , Udemy, Coursera
+      my own account
+    </a>{" "}
+    and{" "}
+    <a
+      className="underline underline-offset-2 decoration-sky-400 decoration-2"
+      href="https://frontendmasters.com/u/toantran/"
+    >
+      company&apos;s account
+    </a>{" "}
+    ) , Udemy, Coursera
   </>,
   <>
     🤓 Challenge my brain with{" "}
@@ -42,7 +49,7 @@ const FunFacts: React.ReactNode[] = [
     >
       LeetCode problems
     </a>{" "}
-    on a daily basis.
+    occasionally.
   </>,
   "🏋️‍♂️ 🏃‍♂️ Mediocre weight lifter and runner.",
   "📈 Obsessed with productivity improve: 🧘‍♂️ Meditation, 🚿❄️ Cold shower, 🌅 Sunlight exposure, 🍅⏰ Pomodoro technique",

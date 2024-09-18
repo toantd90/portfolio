@@ -134,7 +134,7 @@ const Hero = () => (
         id="patterns-headline"
         className="text-xl text-center text-neutral-600 mb-8 dark:text-neutral-200"
       >
-        Front-End{" "}
+        Senior{" "}
         <span className="relative">
           Software Engineer <UnderlineIcon />
         </span>
