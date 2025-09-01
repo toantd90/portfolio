@@ -1,6 +1,6 @@
 "use client"
 
-import { useReducer, useState } from "react"
+import { useReducer } from "react"
 import Image from "next/image"
 
 type FormState = {

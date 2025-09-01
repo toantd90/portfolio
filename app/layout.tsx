@@ -13,11 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <Header />
         {children}
         <Footer />
-        <Script src="/theme.js" strategy="beforeInteractive" />
+        <Script src="/theme.js" strategy="afterInteractive" />
       </body>
     </html>
   )
