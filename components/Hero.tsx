@@ -1,8 +1,8 @@
 "use client"
 
 import { SplineScene } from "@/components/ui/splite"
-import { Spotlight } from "@/components/ui/spotlight"
 import { AnimatedUnderlineText } from "@/components/ui/animated-underline-text-one"
+import { TubesBackground } from "@/components/ui/neon-flow"
 import { useHoverSound } from "@/hooks/useHoverSound"
 
 type SocialLinkProps = {
@@ -30,12 +30,10 @@ const Hero = () => {
   const playSound = useHoverSound()
   return (
   <section className="relative min-h-screen flex items-center overflow-hidden bg-neutral-950">
-    {/* Spotlight beam */}
-    <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
-
-    {/* Ambient glow blobs */}
-    <div className="absolute top-1/4 -left-48 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-    <div className="absolute bottom-1/4 -right-48 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-3xl pointer-events-none" />
+    {/* Neon flow background */}
+    <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
+      <TubesBackground className="w-full h-full" enableClickInteraction={false} />
+    </div>
 
     <div className="relative w-full px-5 py-24 mx-auto max-w-6xl sm:px-6 md:py-32 z-10">
       <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:justify-between">
@@ -153,9 +151,8 @@ const Hero = () => {
 
         {/* 3D Spline Scene */}
         <div
-          className="relative flex-shrink-0 animate-fade-in"
+          className="relative flex-shrink-0 animate-fade-in hidden md:block"
           style={{ animationDelay: "0.2s" }}
-          onMouseEnter={playSound}
         >
           <div className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px] rounded-3xl overflow-hidden">
             <SplineScene

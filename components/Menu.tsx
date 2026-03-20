@@ -12,6 +12,7 @@ const MENUS = [
   { href: "#skills", text: "Skills" },
   { href: "#experience", text: "Experience" },
   { href: "#projects", text: "Projects" },
+  { href: "#testimonials", text: "Recommendations" },
 ]
 
 type Props = {
