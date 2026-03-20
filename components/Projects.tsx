@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useHoverSound } from "@/hooks/useHoverSound"
 
 const projects = [
   {
@@ -21,6 +22,7 @@ const projects = [
 ]
 
 const Projects = () => {
+  const playSound = useHoverSound()
   return (
     <section id="projects" className="bg-neutral-950">
       <motion.div
@@ -47,6 +49,7 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={title}
+                onMouseEnter={playSound}
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-neutral-800">
                   <Image
@@ -63,7 +66,7 @@ const Projects = () => {
               {/* Content */}
               <div className="flex flex-col flex-1 p-5 gap-3">
                 <h3 className="font-semibold text-lg text-neutral-100 leading-snug group-hover:text-violet-400 transition-colors duration-200">
-                  <a href={href} target="_blank" rel="noopener noreferrer">
+                  <a href={href} target="_blank" rel="noopener noreferrer" onMouseEnter={playSound}>
                     {title}
                   </a>
                 </h3>
@@ -74,6 +77,7 @@ const Projects = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onMouseEnter={playSound}
                   className="self-start inline-flex items-center gap-1.5 text-sm font-medium text-violet-400 hover:text-violet-300 transition-colors mt-1"
                 >
                   Visit site

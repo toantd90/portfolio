@@ -2,6 +2,7 @@ import Script from "next/script"
 
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
+import { SoundProvider } from "@/context/SoundContext"
 
 import "./globals.css"
 
@@ -14,9 +15,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <SoundProvider>
+          <Header />
+          {children}
+          <Footer />
+        </SoundProvider>
         <Script src="/theme.js" strategy="afterInteractive" />
       </body>
     </html>

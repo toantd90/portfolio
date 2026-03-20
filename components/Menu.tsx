@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "./Link"
 import { ArrowRightIcon } from "./Icons"
+import { useHoverSound } from "@/hooks/useHoverSound"
 
 import styles from "./menu.module.css"
 
@@ -17,6 +20,7 @@ type Props = {
 }
 
 export default function Menu({ isMenuActive, onMenuClick }: Props) {
+  const playSound = useHoverSound()
   return (
     <nav
       id="mobile-nav"
@@ -29,7 +33,7 @@ export default function Menu({ isMenuActive, onMenuClick }: Props) {
       <ul className="px-5 py-2 md:flex flex-grow justify-end flex-wrap items-center">
         {MENUS.map(({ href, text }) => (
           <li key={href}>
-            <Link href={href} text={text} onClick={onMenuClick} />
+            <Link href={href} text={text} onClick={onMenuClick} onMouseEnter={playSound} />
           </li>
         ))}
         <li>
@@ -37,6 +41,7 @@ export default function Menu({ isMenuActive, onMenuClick }: Props) {
             className="btn-sm text-white bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 w-full my-2 py-2 px-4 rounded-full inline-flex items-center shadow-glow transition-all duration-200"
             href="#contact"
             onClick={onMenuClick}
+            onMouseEnter={playSound}
           >
             <span>Contact</span>
             <ArrowRightIcon />

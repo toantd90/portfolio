@@ -2,42 +2,28 @@
 
 import { motion } from "framer-motion"
 import { CircleIcon } from "./Icons"
+import { AnimatedLink } from "@/components/ui/animated-underline-text-one"
 
 const FunFacts: React.ReactNode[] = [
   "Growth mindset · Lifelong learner",
   <>
     Books lover —{" "}
-    <a
-      className="underline underline-offset-2 decoration-violet-500 hover:text-violet-400 transition-colors"
-      href="https://puffy-anchovy-013.notion.site/546e2ca8394243faa5808b2995a1bbe2"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <AnimatedLink href="https://puffy-anchovy-013.notion.site/546e2ca8394243faa5808b2995a1bbe2">
       see what I&apos;m reading
-    </a>
+    </AnimatedLink>
   </>,
   <>
     Learning on{" "}
-    <a
-      className="underline underline-offset-2 decoration-violet-500 hover:text-violet-400 transition-colors"
-      href="https://frontendmasters.com/u/toantd/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <AnimatedLink href="https://frontendmasters.com/u/toantd/">
       Frontend Masters
-    </a>
+    </AnimatedLink>
     , Udemy, and Coursera
   </>,
   <>
     Solving{" "}
-    <a
-      className="underline underline-offset-2 decoration-violet-500 hover:text-violet-400 transition-colors"
-      href="https://leetcode.com/annietran/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <AnimatedLink href="https://leetcode.com/annietran/">
       LeetCode problems
-    </a>{" "}
+    </AnimatedLink>{" "}
     occasionally
   </>,
   "Mediocre weightlifter and runner",

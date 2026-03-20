@@ -1,4 +1,10 @@
-const Footer = () => (
+"use client"
+
+import { useHoverSound } from "@/hooks/useHoverSound"
+
+const Footer = () => {
+  const playSound = useHoverSound()
+  return (
   <footer className="border-t border-neutral-800">
     <div className="max-w-6xl mx-auto px-5 sm:px-6 py-8">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -10,6 +16,7 @@ const Footer = () => (
             href="https://github.com/toantd90"
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={playSound}
             className="hover:text-violet-400 transition-colors"
           >
             GitHub
@@ -18,6 +25,7 @@ const Footer = () => (
             href="https://www.linkedin.com/in/toan-tran-duc/"
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={playSound}
             className="hover:text-violet-400 transition-colors"
           >
             LinkedIn
@@ -26,6 +34,7 @@ const Footer = () => (
             href="https://dev.to/toantd90"
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={playSound}
             className="hover:text-violet-400 transition-colors"
           >
             Dev.to
@@ -35,5 +44,7 @@ const Footer = () => (
     </div>
   </footer>
 )
+
+}
 
 export default Footer

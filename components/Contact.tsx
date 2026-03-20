@@ -3,6 +3,7 @@
 import { useReducer } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useHoverSound } from "@/hooks/useHoverSound"
 
 type FormState = {
   name: string
@@ -41,6 +42,7 @@ const inputClass =
 
 const Contact = () => {
   const [formState, dispatch] = useReducer(formReducer, initialForm)
+  const playSound = useHoverSound()
 
   const { name, email, subject, message, isSubmitted } = formState
 
@@ -161,6 +163,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   onClick={handleOnSubmit}
+                  onMouseEnter={playSound}
                   className="w-full sm:w-auto px-8 py-2.5 rounded-full font-medium text-sm text-white bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 shadow-glow hover:shadow-glow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
                 >
                   Send message
