@@ -1,136 +1,183 @@
-import Image from "next/image"
+"use client"
 
-const skills = [
+import { motion } from "framer-motion"
+
+type Skill = { text: string; imageUrl?: string }
+type SkillSection = { section: string; technologies: Skill[] }
+
+const skills: SkillSection[] = [
   {
-    section: "Programming Languages",
+    section: "Languages",
     technologies: [
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        text: "Javascript",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        text: "JavaScript",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
         text: "TypeScript",
+      },
+      {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
+        text: "Go",
       },
     ],
   },
   {
-    section: "Web Development Frameworks & Libraries",
+    section: "Frameworks & Libraries",
     technologies: [
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        text: "React",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        text: "React.js",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg",
         text: "Next.js",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-        text: "Tailwind",
-      },
-      {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg",
         text: "Node.js",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-        text: "Express",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+        text: "TailwindCSS",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
         text: "Redux",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        text: "HTML",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+        text: "Material UI",
       },
-      {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        text: "CSS",
-      },
-      {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-        text: "Sass",
-      },
+      { text: "TanStack Query", imageUrl: "/icons/react-query.svg" },
+      { text: "tRPC", imageUrl: "https://api.iconify.design/logos:trpc.svg" },
+      { text: "Zustand", imageUrl: "/icons/zustand.svg" },
+      { text: "Zod", imageUrl: "/icons/zod.svg" },
+      { text: "react-hook-form", imageUrl: "/icons/react-hook-form.svg" },
+      { text: "Formik", imageUrl: "/icons/formik.svg" },
+      { text: "Yjs", imageUrl: "/icons/yjs.svg" },
+      { text: "ShadCN", imageUrl: "/icons/shadcn.svg" },
+      { text: "React Context" },
     ],
   },
   {
     section: "Tools",
     technologies: [
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
+        text: "Vite",
+      },
+      {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
+        text: "Webpack",
+      },
+      { text: "ESBuild", imageUrl: "https://api.iconify.design/logos:esbuild.svg" },
+      { text: "Nx", imageUrl: "https://api.iconify.design/logos:nx.svg" },
+      { text: "Module Federation", imageUrl: "/icons/module-federation.svg" },
+    ],
+  },
+  {
+    section: "Testing",
+    technologies: [
+      {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
         text: "Jest",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
-        text: "Webpack",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg",
+        text: "Cypress",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-        text: "VS Code",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg",
+        text: "Playwright",
+      },
+      { text: "Vitest", imageUrl: "https://api.iconify.design/logos:vitest.svg" },
+      { text: "React Testing Library", imageUrl: "https://api.iconify.design/logos:testing-library.svg" },
+      { text: "MSW", imageUrl: "https://api.iconify.design/logos:msw.svg" },
+    ],
+  },
+  {
+    section: "Cloud, CI/CD & Observability",
+    technologies: [
+      {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        text: "AWS",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-        text: "Git",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+        text: "Google Cloud",
       },
       {
-        imageUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-        text: "Github",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+        text: "Docker",
       },
+      {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg",
+        text: "Grafana",
+      },
+      { text: "GitHub Actions", imageUrl: "https://api.iconify.design/logos:github-actions.svg" },
+      { text: "Sentry", imageUrl: "https://api.iconify.design/logos:sentry-icon.svg" },
+      { text: "PostHog", imageUrl: "https://api.iconify.design/logos:posthog-icon.svg" },
     ],
   },
 ]
 
-const Skills = () => (
-  <div id="skills" className="text-white mx-auto max-w-screen-xl py-32 sm:py-8">
-    <div className="max-w-6xl mx-auto px-5 sm:px-6">
-      <h1 className="block bg-clip-text text-transparent font-bold text-2xl sm:text-3xl lg:text-3xl tracking-tight bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
-        Skills
-      </h1>
-      {skills.map(({ section, technologies }, sectionIndex) => (
-        <div key={`section-${sectionIndex}`} className="my-9">
-          <p className="mt-2 tracking-tigh text-xl text-neutral-600 dark:text-neutral-200">{section}</p>
-          <dl className="grid grid-cols-2 gap-8 mt-4 md:space-y-0 md:grid-cols-3 xl:grid-cols-5 md:gap-x-8 md:gap-y-10 md:mt-8">
-            {technologies.map(({ imageUrl, text }, index) => (
-              <div key={`technology-${index}`} className="relative">
-                <dt className="flex items-center">
-                  <div className="flex items-center justify-center absolute h-8 w-8 rounded-md bg-white text-white md:h-12 md:w-12">
-                    <Image
-                      className="rounded-md"
-                      alt="javascript"
-                      width={46}
-                      height={46}
-                      src={imageUrl}
-                    />
+const Skills = () => {
+  return (
+    <section id="skills" className="bg-neutral-950">
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-5 sm:px-6 py-24"
+      >
+        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-12">
+          Skills
+        </h2>
+
+        <div className="space-y-10">
+          {skills.map(({ section, technologies }, sectionIndex) => (
+            <div key={`section-${sectionIndex}`}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-4">
+                {section}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {technologies.map(({ imageUrl, text }, index) => (
+                  <div
+                    key={`technology-${index}`}
+                    className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-neutral-800 bg-neutral-900/60 hover:border-violet-700/60 hover:bg-violet-950/30 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 cursor-default"
+                  >
+                    {imageUrl ? (
+                      <div className="w-5 h-5 flex-shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          alt={text}
+                          width={20}
+                          height={20}
+                          src={imageUrl}
+                          className="w-5 h-5 object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-5 h-5 flex-shrink-0 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
+                        <span className="text-[9px] font-bold text-white">{text[0]}</span>
+                      </div>
+                    )}
+                    <span className="text-sm font-medium text-neutral-300">
+                      {text}
+                    </span>
                   </div>
-                  <p className="ml-10 text-lg leading-6 font-medium text-neutral-600 dark:text-neutral-200 md:ml-16">
-                    {text}
-                  </p>
-                </dt>
+                ))}
               </div>
-            ))}
-          </dl>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-)
+      </motion.div>
+    </section>
+  )
+}
 
 export default Skills

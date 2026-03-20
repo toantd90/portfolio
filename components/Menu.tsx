@@ -7,6 +7,7 @@ const MENUS = [
   { href: "/", text: "Home" },
   { href: "#about-me", text: "About" },
   { href: "#skills", text: "Skills" },
+  { href: "#experience", text: "Experience" },
   { href: "#projects", text: "Projects" },
 ]
 
@@ -20,7 +21,7 @@ export default function Menu({ isMenuActive, onMenuClick }: Props) {
     <nav
       id="mobile-nav"
       className={`md:opacity-100 md:visible ${isMenuActive ? styles.active : ""} ${
-        isMenuActive ? "bg-white dark:bg-neutral-900/90" : ""
+        isMenuActive ? "bg-neutral-950/95" : ""
       } ${
         styles.nav
       } absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll transition-all duration-300 ease-in-out md:flex-grow  md:pb-0 md:w-auto md:overflow-hidden md:h-auto md:static`}
@@ -33,7 +34,7 @@ export default function Menu({ isMenuActive, onMenuClick }: Props) {
         ))}
         <li>
           <a
-            className="btn-sm text-neutral-200 bg-neutral-900 hover:bg-neutral-800 w-full dark:bg-blue-700 dark:hover:bg-blue-800 my-2 py-2 px-4 rounded inline-flex items-center"
+            className="btn-sm text-white bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 w-full my-2 py-2 px-4 rounded-full inline-flex items-center shadow-glow transition-all duration-200"
             href="#contact"
             onClick={onMenuClick}
           >

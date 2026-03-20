@@ -1,11 +1,39 @@
 const Footer = () => (
-  <div className="max-w-6xl mx-auto px-4 sm:px-6">
-    <div className="md:flex md:items-center md:justify-between py-4 md:py-8 border-t border-neutral-200 dark:border-neutral-700">
-      <div className="text-sm text-neutral-600 mr-4 dark:text-neutral-400">
-        © 2023 ToanTran.dev. All rights reserved.
+  <footer className="border-t border-neutral-800">
+    <div className="max-w-6xl mx-auto px-5 sm:px-6 py-8">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-neutral-500">
+          © 2026 Toan Tran. All rights reserved.
+        </p>
+        <div className="flex items-center gap-5 text-sm text-neutral-500">
+          <a
+            href="https://github.com/toantd90"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-violet-400 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/toan-tran-duc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-violet-400 transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://dev.to/toantd90"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-violet-400 transition-colors"
+          >
+            Dev.to
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </footer>
 )
 
 export default Footer
