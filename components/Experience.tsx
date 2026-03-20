@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Timeline } from "@/components/ui/timeline"
 
@@ -132,44 +132,43 @@ const experienceData: { title: string; jobs: Job[] }[] = [
 ]
 
 function JobCard({ job }: { job: Job }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [expanded, setExpanded] = useState(true)
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 639px)")
-    if (!mq.matches) return // desktop: always expanded
-
-    setExpanded(false)
-    const observer = new IntersectionObserver(
-      ([entry]) => setExpanded(entry.isIntersecting),
-      { threshold: 0.4 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
+  const [expanded, setExpanded] = useState(false)
 
   return (
-    <div
-      ref={ref}
-      className="mb-3 sm:mb-6 last:mb-0 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4 sm:p-5 hover:border-violet-800/60 hover:shadow-glow transition-all duration-300"
-    >
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-0 sm:mb-3">
-        <div>
+    <div className="mb-3 sm:mb-6 last:mb-0 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4 sm:p-5 hover:border-violet-800/60 hover:shadow-glow transition-all duration-300">
+      <div className="flex items-start justify-between gap-2 sm:gap-4">
+        <div className="flex-1 min-w-0">
           <h4 className="font-semibold text-neutral-100 text-base leading-snug">
             {job.title}
           </h4>
           <p className="text-violet-400 text-sm font-medium mt-0.5">{job.company}</p>
+          <div className="flex flex-wrap gap-x-3 mt-1">
+            <p className="text-neutral-400 text-xs">{job.period}</p>
+            <p className="text-neutral-500 text-xs">{job.location}</p>
+          </div>
         </div>
-        <div className="sm:text-right shrink-0">
-          <p className="text-neutral-400 text-xs mt-0.5 sm:mt-0">{job.period}</p>
-          <p className="text-neutral-500 text-xs mt-0.5">{job.location}</p>
-        </div>
+
+        {/* Expand toggle — mobile only */}
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          aria-label={expanded ? "Collapse details" : "Expand details"}
+          className="sm:hidden shrink-0 mt-0.5 p-1.5 rounded-full border border-neutral-700 text-neutral-400 hover:border-violet-600 hover:text-violet-400 transition-all duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`w-3.5 h-3.5 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+            strokeLinecap="round" strokeLinejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
       </div>
 
-      {/* Highlights — animated on mobile, always visible on desktop */}
+      {/* Highlights — collapsible on mobile, always visible on desktop */}
       <div
         className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out sm:max-h-none sm:opacity-100 ${
-          expanded ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+          expanded ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0 sm:mt-3"
         }`}
       >
         <ul className="space-y-1.5">
