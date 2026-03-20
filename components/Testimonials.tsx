@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef, useState } from "react"
 import { motion, type Variants } from "framer-motion"
 import { AnimatedLink } from "@/components/ui/animated-underline-text-one"
 
@@ -97,6 +98,50 @@ const testimonials: Testimonial[] = [
   },
 ]
 
+const TestimonialCard = ({ t }: { t: Testimonial }) => (
+  <div className="group relative flex flex-col gap-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 hover:border-violet-800/60 hover:shadow-glow transition-all duration-300 h-full">
+    {/* Decorative quote mark */}
+    <span className="absolute top-4 right-5 text-7xl leading-none text-violet-500/10 font-serif select-none pointer-events-none">
+      "
+    </span>
+
+    {/* Quote */}
+    <p className="text-neutral-300 text-sm leading-relaxed relative z-10 flex-1">
+      &ldquo;{t.quote}&rdquo;
+    </p>
+
+    {/* Divider */}
+    <div className="h-px bg-neutral-800 group-hover:bg-violet-900/40 transition-colors duration-300" />
+
+    {/* Author */}
+    <div className="flex items-center gap-3">
+      <a href={t.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on LinkedIn`} className="shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={t.avatar} alt={t.name} width={40} height={40}
+          className="w-10 h-10 rounded-full object-cover ring-2 ring-neutral-700 group-hover:ring-violet-700/60 transition-all duration-300" />
+      </a>
+      <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+        <div className="flex items-center justify-between gap-2">
+          <AnimatedLink href={t.linkedIn} className="font-semibold text-neutral-100 text-sm truncate">
+            {t.name}
+          </AnimatedLink>
+          <span className="text-xs text-neutral-600 shrink-0">{t.date}</span>
+        </div>
+        <span className="text-xs text-neutral-400 truncate">{t.title}</span>
+        <span className="text-xs text-neutral-600">{t.relationship}</span>
+      </div>
+      <a href={t.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on LinkedIn`}
+        className="shrink-0 text-neutral-600 hover:text-violet-400 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+          <rect width="4" height="12" x="2" y="9" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+      </a>
+    </div>
+  </div>
+)
+
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
@@ -107,6 +152,21 @@ const cardVariants: Variants = {
 }
 
 const Testimonials = () => {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [current, setCurrent] = useState(0)
+
+  const scrollTo = (index: number) => {
+    const el = scrollRef.current
+    if (!el) return
+    const card = el.children[index] as HTMLElement
+    if (!card) return
+    el.scrollTo({ left: card.offsetLeft - el.offsetLeft, behavior: "smooth" })
+    setCurrent(index)
+  }
+
+  const prev = () => scrollTo(Math.max(0, current - 1))
+  const next = () => scrollTo(Math.min(testimonials.length - 1, current + 1))
+
   return (
     <section id="testimonials" className="bg-neutral-950">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 py-24">
@@ -129,8 +189,68 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        {/* Grid */}
-        <div className="columns-1 sm:columns-2 gap-6 space-y-6">
+        {/* Mobile: horizontal snap scroll */}
+        <div className="sm:hidden">
+          <div
+            ref={scrollRef}
+            className="-mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [&::-webkit-scrollbar]:hidden [scrollbar-width:none] [-ms-overflow-style:none]"
+          >
+            {testimonials.map((t, i) => (
+              <div key={i} className="snap-center shrink-0 w-[85vw]">
+                <TestimonialCard t={t} />
+              </div>
+            ))}
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-between mt-4 px-1">
+            {/* Dot indicators */}
+            <div className="flex items-center gap-1.5">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollTo(i)}
+                  aria-label={`Go to recommendation ${i + 1}`}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === current
+                      ? "w-4 h-1.5 bg-violet-500"
+                      : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Prev / Next */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={prev}
+                disabled={current === 0}
+                aria-label="Previous recommendation"
+                className="p-2 rounded-full border border-neutral-700 text-neutral-400 hover:border-violet-600 hover:text-violet-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <span className="text-xs text-neutral-600 tabular-nums w-10 text-center">
+                {current + 1} / {testimonials.length}
+              </span>
+              <button
+                onClick={next}
+                disabled={current === testimonials.length - 1}
+                aria-label="Next recommendation"
+                className="p-2 rounded-full border border-neutral-700 text-neutral-400 hover:border-violet-600 hover:text-violet-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop: masonry grid */}
+        <div className="hidden sm:block columns-2 gap-6 space-y-6">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -139,70 +259,9 @@ const Testimonials = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="group relative break-inside-avoid flex flex-col gap-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 hover:border-violet-800/60 hover:shadow-glow transition-all duration-300"
+              className="break-inside-avoid"
             >
-              {/* Decorative quote mark */}
-              <span className="absolute top-4 right-5 text-7xl leading-none text-violet-500/10 font-serif select-none pointer-events-none">
-                "
-              </span>
-
-              {/* Quote */}
-              <p className="text-neutral-300 text-sm leading-relaxed relative z-10">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Divider */}
-              <div className="h-px bg-neutral-800 group-hover:bg-violet-900/40 transition-colors duration-300" />
-
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                {/* Avatar */}
-                <a
-                  href={t.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-
-                  aria-label={`${t.name} on LinkedIn`}
-                  className="shrink-0"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 rounded-full object-cover ring-2 ring-neutral-700 group-hover:ring-violet-700/60 transition-all duration-300"
-                  />
-                </a>
-
-                {/* Info */}
-                <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-                  <div className="flex items-center justify-between gap-2">
-                    <AnimatedLink href={t.linkedIn} className="font-semibold text-neutral-100 text-sm truncate">
-                      {t.name}
-                    </AnimatedLink>
-                    <span className="text-xs text-neutral-600 shrink-0">{t.date}</span>
-                  </div>
-                  <span className="text-xs text-neutral-400 truncate">{t.title}</span>
-                  <span className="text-xs text-neutral-600">{t.relationship}</span>
-                </div>
-
-                {/* LinkedIn icon */}
-                <a
-                  href={t.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-
-                  aria-label={`${t.name} on LinkedIn`}
-                  className="shrink-0 text-neutral-600 hover:text-violet-400 transition-colors duration-200"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                    <rect width="4" height="12" x="2" y="9" />
-                    <circle cx="4" cy="4" r="2" />
-                  </svg>
-                </a>
-              </div>
+              <TestimonialCard t={t} />
             </motion.div>
           ))}
         </div>
