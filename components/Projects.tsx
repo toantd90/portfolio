@@ -30,13 +30,13 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto px-5 sm:px-6 py-24"
+        className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-24"
       >
-        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-12">
+        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-8 sm:mb-12">
           Projects
         </h2>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
           {projects.map(({ title, description, image, href }) => (
             <article
               key={href}

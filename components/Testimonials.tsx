@@ -169,7 +169,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="bg-neutral-950">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6 py-24">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-24">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

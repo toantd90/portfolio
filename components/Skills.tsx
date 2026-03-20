@@ -131,13 +131,13 @@ const Skills = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto px-5 sm:px-6 py-24"
+        className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-24"
       >
-        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-12">
+        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-8 sm:mb-12">
           Skills
         </h2>
 
-        <div className="space-y-10">
+        <div className="space-y-6 sm:space-y-10">
           {skills.map(({ section, technologies }, sectionIndex) => (
             <div key={`section-${sectionIndex}`}>
               <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-4">
@@ -147,7 +147,8 @@ const Skills = () => {
                 {technologies.map(({ imageUrl, text }, index) => (
                   <div
                     key={`technology-${index}`}
-                    className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-neutral-800 bg-neutral-900/60 hover:border-violet-700/60 hover:bg-violet-950/30 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 cursor-default"
+                    title={text}
+                    className="flex items-center gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-neutral-800 bg-neutral-900/60 hover:border-violet-700/60 hover:bg-violet-950/30 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 cursor-default"
                   >
                     {imageUrl ? (
                       <div className="w-5 h-5 flex-shrink-0">
@@ -166,7 +167,7 @@ const Skills = () => {
                         <span className="text-[9px] font-bold text-white">{text[0]}</span>
                       </div>
                     )}
-                    <span className="text-sm font-medium text-neutral-300">
+                    <span className="hidden sm:inline text-sm font-medium text-neutral-300">
                       {text}
                     </span>
                   </div>

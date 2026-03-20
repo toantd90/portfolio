@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Timeline } from "@/components/ui/timeline"
 
@@ -131,28 +132,55 @@ const experienceData: { title: string; jobs: Job[] }[] = [
 ]
 
 function JobCard({ job }: { job: Job }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [expanded, setExpanded] = useState(true)
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)")
+    if (!mq.matches) return // desktop: always expanded
+
+    setExpanded(false)
+    const observer = new IntersectionObserver(
+      ([entry]) => setExpanded(entry.isIntersecting),
+      { threshold: 0.4 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <div className="mb-6 last:mb-0 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 hover:border-violet-800/60 hover:shadow-glow transition-all duration-300">
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+    <div
+      ref={ref}
+      className="mb-3 sm:mb-6 last:mb-0 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4 sm:p-5 hover:border-violet-800/60 hover:shadow-glow transition-all duration-300"
+    >
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-0 sm:mb-3">
         <div>
           <h4 className="font-semibold text-neutral-100 text-base leading-snug">
             {job.title}
           </h4>
           <p className="text-violet-400 text-sm font-medium mt-0.5">{job.company}</p>
         </div>
-        <div className="text-right shrink-0">
-          <p className="text-neutral-400 text-xs">{job.period}</p>
+        <div className="sm:text-right shrink-0">
+          <p className="text-neutral-400 text-xs mt-0.5 sm:mt-0">{job.period}</p>
           <p className="text-neutral-500 text-xs mt-0.5">{job.location}</p>
         </div>
       </div>
-      <ul className="space-y-1.5">
-        {job.highlights.map((h, i) => (
-          <li key={i} className="flex gap-2 text-sm text-neutral-400 leading-relaxed">
-            <span className="text-violet-500 shrink-0" style={{ lineHeight: 'inherit' }}>▸</span>
-            {h}
-          </li>
-        ))}
-      </ul>
+
+      {/* Highlights — animated on mobile, always visible on desktop */}
+      <div
+        className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out sm:max-h-none sm:opacity-100 ${
+          expanded ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="space-y-1.5">
+          {job.highlights.map((h, i) => (
+            <li key={i} className="flex gap-2 text-sm text-neutral-400 leading-relaxed">
+              <span className="text-violet-500 shrink-0" style={{ lineHeight: "inherit" }}>▸</span>
+              {h}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
@@ -176,7 +204,7 @@ const Experience = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto px-5 sm:px-6 pt-24"
+        className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-24"
       >
         <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-2">
           Experience
