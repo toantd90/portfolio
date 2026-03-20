@@ -4,14 +4,16 @@ type LinkProps = {
   href: string
   text: string
   onClick: () => void
+  onMouseEnter?: () => void
 }
 
-export default function Link({ href, text, onClick }: LinkProps) {
+export default function Link({ href, text, onClick, onMouseEnter }: LinkProps) {
   return (
     <NextLink
-      className="flex text-neutral-600 hover:text-neutral-900 py-2 dark:text-neutral-300 dark:hover:text-neutral-400 md:py-3 md:px-3"
+      className="flex text-neutral-400 hover:text-violet-400 py-2 md:py-3 md:px-3 transition-colors duration-200"
       href={href}
       onClick={() => onClick()}
+      onMouseEnter={onMouseEnter}
     >
       {text}
     </NextLink>
