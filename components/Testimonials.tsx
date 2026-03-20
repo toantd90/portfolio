@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { AnimatedLink } from "@/components/ui/animated-underline-text-one"
 
 type Testimonial = {
@@ -97,7 +97,7 @@ const testimonials: Testimonial[] = [
   },
 ]
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
     opacity: 1,
