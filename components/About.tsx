@@ -4,30 +4,59 @@ import { motion } from "framer-motion"
 import { CircleIcon } from "./Icons"
 import { AnimatedLink } from "@/components/ui/animated-underline-text-one"
 
-const FunFacts: React.ReactNode[] = [
-  "Growth mindset · Lifelong learner",
-  <>
-    Books lover —{" "}
-    <AnimatedLink href="https://puffy-anchovy-013.notion.site/546e2ca8394243faa5808b2995a1bbe2">
-      see what I&apos;m reading
-    </AnimatedLink>
-  </>,
-  <>
-    Learning on{" "}
-    <AnimatedLink href="https://frontendmasters.com/u/toantd/">
-      Frontend Masters
-    </AnimatedLink>
-    , Udemy, and Coursera
-  </>,
-  <>
-    Solving{" "}
-    <AnimatedLink href="https://leetcode.com/annietran/">
-      LeetCode problems
-    </AnimatedLink>{" "}
-    occasionally
-  </>,
-  "Mediocre weightlifter and runner",
-  "Obsessed with productivity: meditation, cold showers, sunlight, Pomodoro",
+const FunFacts: { icon: string; animClass?: string; content: React.ReactNode }[] = [
+  {
+    icon: "🌱",
+    animClass: "animate-pulse",
+    content: "Growth mindset · Lifelong learner",
+  },
+  {
+    icon: "📚",
+    animClass: "animate-float",
+    content: (
+      <>
+        Books lover —{" "}
+        <AnimatedLink href="https://puffy-anchovy-013.notion.site/546e2ca8394243faa5808b2995a1bbe2">
+          see what I&apos;m reading
+        </AnimatedLink>
+      </>
+    ),
+  },
+  {
+    icon: "🎓",
+    content: (
+      <>
+        Learning on{" "}
+        <AnimatedLink href="https://frontendmasters.com/u/toantd/">
+          Frontend Masters
+        </AnimatedLink>
+        , Udemy, and Coursera
+      </>
+    ),
+  },
+  {
+    icon: "⚡",
+    animClass: "animate-pulse",
+    content: (
+      <>
+        Solving{" "}
+        <AnimatedLink href="https://leetcode.com/annietran/">
+          LeetCode problems
+        </AnimatedLink>{" "}
+        occasionally
+      </>
+    ),
+  },
+  {
+    icon: "🏋️",
+    animClass: "animate-bounce",
+    content: "Mediocre weightlifter and runner",
+  },
+  {
+    icon: "🧘",
+    animClass: "animate-float",
+    content: "Obsessed with productivity: meditation, cold showers, sunlight, Pomodoro",
+  },
 ]
 
 
@@ -75,14 +104,16 @@ const About = () => {
               </span>
               Fun Facts
             </h3>
-            <ul className="space-y-2.5">
-              {FunFacts.map((fact, index) => (
+            <ul className="space-y-3">
+              {FunFacts.map(({ icon, animClass, content }, index) => (
                 <li
                   key={`fun-fact-${index}`}
-                  className="flex items-start gap-2 text-sm text-neutral-400"
+                  className="flex items-start gap-3 text-sm text-neutral-400"
                 >
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0" />
-                  <span>{fact}</span>
+                  <span className={`text-lg leading-none flex-shrink-0 ${animClass ?? ""}`}>
+                    {icon}
+                  </span>
+                  <span className="mt-0.5">{content}</span>
                 </li>
               ))}
             </ul>
