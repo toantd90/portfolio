@@ -76,11 +76,11 @@ const Contact = () => {
           Contact
         </h2>
 
-        <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:items-start">
+        <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
           {/* Form */}
           <div className="w-full md:max-w-lg">
             {isSubmitted ? (
-              <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
+              <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
                 <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-400 to-violet-600 flex items-center justify-center">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -92,43 +92,45 @@ const Contact = () => {
                 </p>
               </div>
             ) : (
-              <form action="#" className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block mb-1.5 text-sm font-medium text-neutral-300">
-                    Your name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className={inputClass}
-                    placeholder="How should I call you?"
-                    value={name}
-                    onChange={(e) =>
-                      dispatch({ type: "UPDATE_FORM", payload: { name: e.target.value } })
-                    }
-                    required
-                  />
+              <form action="#" className="space-y-3 sm:space-y-5">
+                {/* Name + Email side by side on mobile */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label htmlFor="name" className="block mb-1 text-sm font-medium text-neutral-300">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      className={inputClass}
+                      placeholder="Your name"
+                      value={name}
+                      onChange={(e) =>
+                        dispatch({ type: "UPDATE_FORM", payload: { name: e.target.value } })
+                      }
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block mb-1 text-sm font-medium text-neutral-300">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className={inputClass}
+                      placeholder="your@email.com"
+                      value={email}
+                      onChange={(e) =>
+                        dispatch({ type: "UPDATE_FORM", payload: { email: e.target.value } })
+                      }
+                      required
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block mb-1.5 text-sm font-medium text-neutral-300">
-                    Your email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className={inputClass}
-                    placeholder="your@email.com"
-                    value={email}
-                    onChange={(e) =>
-                      dispatch({ type: "UPDATE_FORM", payload: { email: e.target.value } })
-                    }
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block mb-1.5 text-sm font-medium text-neutral-300">
+                  <label htmlFor="subject" className="block mb-1 text-sm font-medium text-neutral-300">
                     Subject
                   </label>
                   <input
@@ -145,12 +147,12 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block mb-1.5 text-sm font-medium text-neutral-300">
+                  <label htmlFor="message" className="block mb-1 text-sm font-medium text-neutral-300">
                     Message
                   </label>
                   <textarea
                     id="message"
-                    rows={5}
+                    rows={4}
                     className={inputClass}
                     placeholder="Tell me what's on your mind..."
                     value={message}
@@ -172,14 +174,14 @@ const Contact = () => {
             )}
           </div>
 
-          {/* Illustration */}
-          <div className="flex-shrink-0 opacity-80">
+          {/* Illustration — hidden on mobile */}
+          <div className="hidden md:block flex-shrink-0 opacity-80">
             <Image
               src="/images/get-in-touch.png"
               alt="Get in touch"
               width={400}
               height={400}
-              className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px]"
+              className="w-full max-w-[360px]"
             />
           </div>
         </div>
