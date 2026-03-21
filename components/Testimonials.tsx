@@ -115,29 +115,39 @@ const TestimonialCard = ({ t }: { t: Testimonial }) => (
 
     {/* Author */}
     <div className="flex items-center gap-3">
+      {/* Avatar */}
       <a href={t.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on LinkedIn`} className="shrink-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={t.avatar} alt={t.name} width={40} height={40}
           className="w-10 h-10 rounded-full object-cover ring-2 ring-neutral-700 group-hover:ring-violet-700/60 transition-all duration-300" />
       </a>
+
+      {/* Info */}
       <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-        <div className="flex items-center justify-between gap-2">
+        {/* Name + LinkedIn icon on same row */}
+        <div className="flex items-center gap-1.5">
           <AnimatedLink href={t.linkedIn} className="font-semibold text-neutral-100 text-sm truncate">
             {t.name}
           </AnimatedLink>
+          <a href={t.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on LinkedIn`}
+            className="shrink-0 text-neutral-600 hover:text-violet-400 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect width="4" height="12" x="2" y="9" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Title */}
+        <span className="text-xs text-neutral-400 truncate">{t.title}</span>
+
+        {/* Relationship + date on same row */}
+        <div className="flex items-center justify-between gap-2 mt-0.5">
+          <span className="text-xs text-neutral-600 truncate">{t.relationship}</span>
           <span className="text-xs text-neutral-600 shrink-0">{t.date}</span>
         </div>
-        <span className="text-xs text-neutral-400 truncate">{t.title}</span>
-        <span className="text-xs text-neutral-600">{t.relationship}</span>
       </div>
-      <a href={t.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on LinkedIn`}
-        className="shrink-0 text-neutral-600 hover:text-violet-400 transition-colors duration-200">
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-          <rect width="4" height="12" x="2" y="9" />
-          <circle cx="4" cy="4" r="2" />
-        </svg>
-      </a>
     </div>
   </div>
 )
