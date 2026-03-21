@@ -25,10 +25,10 @@ export function TubesBackground({
 
   useEffect(() => {
     let mounted = true
-    let cleanup: (() => void) | undefined
+    let timerId: ReturnType<typeof setTimeout>
 
     const initTubes = async () => {
-      if (!canvasRef.current) return
+      if (!mounted || !canvasRef.current) return
       try {
         // Use new Function to bypass webpack's static import analysis so the
         // browser's native dynamic import handles the https:// URL at runtime.
@@ -48,20 +48,21 @@ export function TubesBackground({
         })
 
         tubesRef.current = app
-
-        cleanup = () => {
-          // nullify ref on unmount
-        }
       } catch (error) {
         console.error("Failed to load TubesCursor:", error)
       }
     }
 
-    initTubes()
+    // Defer loading the heavy Three.js CDN library until after the page is
+    // interactive — keeps it off the critical path and reduces TBT.
+    timerId = setTimeout(() => {
+      const ric = (window as any).requestIdleCallback
+      ric ? ric(() => initTubes()) : initTubes()
+    }, 1500)
 
     return () => {
       mounted = false
-      if (cleanup) cleanup()
+      clearTimeout(timerId)
     }
   }, [])
 

@@ -1,15 +1,18 @@
+import lazy from "next/dynamic"
 import { Analytics } from "@vercel/analytics/react"
 import { Inter } from "next/font/google"
 
 export const dynamic = "force-static"
 
 import Hero from "../components/Hero"
-import About from "../components/About"
-import Skills from "../components/Skills"
-import Experience from "../components/Experience"
-import Projects from "../components/Projects"
-import Testimonials from "../components/Testimonials"
-import Contact from "@/components/Contact"
+
+// Code-split below-fold sections — JS loaded only when needed
+const About = lazy(() => import("../components/About"))
+const Skills = lazy(() => import("../components/Skills"))
+const Experience = lazy(() => import("../components/Experience"))
+const Projects = lazy(() => import("../components/Projects"))
+const Testimonials = lazy(() => import("../components/Testimonials"))
+const Contact = lazy(() => import("@/components/Contact"))
 
 const inter = Inter({ subsets: ["latin"] })
 
