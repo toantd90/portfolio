@@ -31,7 +31,7 @@ const skills: SkillSection[] = [
         text: "React.js",
       },
       {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg",
+        imageUrl: "https://cdn.simpleicons.org/nextdotjs/ffffff",
         text: "Next.js",
       },
       {
@@ -101,7 +101,7 @@ const skills: SkillSection[] = [
     section: "Cloud, CI/CD & Observability",
     technologies: [
       {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        imageUrl: "https://cdn.simpleicons.org/amazonwebservices/ffffff",
         text: "AWS",
       },
       {
