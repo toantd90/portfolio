@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion, type Variants } from "framer-motion"
 import { AnimatedLink } from "@/components/ui/animated-underline-text-one"
 
@@ -164,6 +164,27 @@ const cardVariants: Variants = {
 const Testimonials = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+
+    const handleScroll = () => {
+      const center = el.scrollLeft + el.offsetWidth / 2
+      let closest = 0
+      let minDist = Infinity
+      Array.from(el.children).forEach((child, i) => {
+        const c = child as HTMLElement
+        const cardCenter = c.offsetLeft + c.offsetWidth / 2
+        const dist = Math.abs(center - cardCenter)
+        if (dist < minDist) { minDist = dist; closest = i }
+      })
+      setCurrent(closest)
+    }
+
+    el.addEventListener("scroll", handleScroll, { passive: true })
+    return () => el.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const scrollTo = (index: number) => {
     const el = scrollRef.current
