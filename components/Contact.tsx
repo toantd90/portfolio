@@ -38,7 +38,7 @@ const formReducer = (state: FormState, action: Action) => {
 }
 
 const inputClass =
-  "w-full px-4 py-2.5 rounded-xl border border-neutral-700 bg-neutral-900 text-neutral-100 placeholder:text-neutral-500 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200"
+  "w-full px-4 py-2.5 rounded-xl border border-neutral-700 bg-neutral-900 text-neutral-100 placeholder:text-neutral-500 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200"
 
 const Contact = () => {
   const [formState, dispatch] = useReducer(formReducer, initialForm)
