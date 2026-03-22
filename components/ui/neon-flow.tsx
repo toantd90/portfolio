@@ -82,11 +82,11 @@ export function TubesBackground({
         className="absolute inset-0 w-full h-full block"
         style={{ touchAction: 'none' }}
       />
-      {children && (
+      {children != null ? (
         <div className="relative z-10 w-full h-full">
           {children}
         </div>
-      )}
+      ) : null}
     </div>
   )
 }
