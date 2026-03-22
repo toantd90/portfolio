@@ -8,6 +8,7 @@ html {
 
 body {
   @apply bg-neutral-950 text-neutral-100;
+  font-family: var(--font-body);
 }
 
 ::-webkit-scrollbar {

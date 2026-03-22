@@ -71,7 +71,7 @@ const About = () => {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-24"
       >
-        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-8 sm:mb-12">
+        <h2 className="font-heading text-neutral-100 font-bold text-3xl sm:text-4xl tracking-tight mb-8 sm:mb-12">
           About Me
         </h2>
 
@@ -98,7 +98,7 @@ const About = () => {
 
           {/* Fun Facts */}
           <div>
-            <h3 className="text-base font-semibold text-neutral-200 mb-4 flex items-center gap-2">
+            <h3 className="font-heading text-base font-semibold text-neutral-200 mb-4 flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-400 to-violet-600 flex items-center justify-center text-white text-xs">
                 ⚡
               </span>

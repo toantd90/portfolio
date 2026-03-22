@@ -1,11 +1,27 @@
 import type { Metadata } from "next"
 import Script from "next/script"
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google"
 
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import { SoundProvider } from "@/context/SoundContext"
 
 import "./globals.css"
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["700"],
+  style: ["normal", "italic"],
+  variable: "--font-heading",
+  display: "swap",
+})
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+})
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://toantran.dev"
 
@@ -41,7 +57,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${plusJakartaSans.variable}`}>
       <body suppressHydrationWarning>
         <SoundProvider>
           <Header />

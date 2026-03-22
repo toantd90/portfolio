@@ -51,7 +51,7 @@ const Hero = () => {
 
           {/* Name */}
           <h1
-            className="font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer"
+            className="font-heading font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer"
           >
             Toan Tran
           </h1>

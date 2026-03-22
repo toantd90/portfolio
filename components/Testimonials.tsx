@@ -209,7 +209,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight">
+          <h2 className="font-heading text-neutral-100 font-bold text-3xl sm:text-4xl tracking-tight">
             Recommendations
           </h2>
           <p className="mt-3 text-neutral-400 text-sm">

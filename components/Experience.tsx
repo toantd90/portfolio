@@ -138,7 +138,7 @@ function JobCard({ job }: { job: Job }) {
     <div className="mb-3 sm:mb-6 last:mb-0 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4 sm:p-5 hover:border-violet-800/60 hover:shadow-glow transition-all duration-300">
       <div className="flex items-start justify-between gap-2 sm:gap-4">
         <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-neutral-100 text-base leading-snug">
+          <h4 className="font-heading font-semibold text-neutral-100 text-base leading-snug">
             {job.title}
           </h4>
           <p className="text-violet-400 text-sm font-medium mt-0.5">{job.company}</p>
@@ -205,7 +205,7 @@ const Experience = () => {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-24"
       >
-        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-2">
+        <h2 className="font-heading text-neutral-100 font-bold text-3xl sm:text-4xl tracking-tight mb-2">
           Experience
         </h2>
         <p className="text-neutral-400 text-sm mb-0">

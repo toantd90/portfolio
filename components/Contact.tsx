@@ -64,7 +64,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="bg-neutral-950">
+    <section id="contact" className="bg-[#0d0b14]">
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const Contact = () => {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-24"
       >
-        <h2 className="bg-gradient-to-r from-indigo-400 via-violet-500 to-purple-600 bg-clip-text text-transparent font-bold text-3xl sm:text-4xl tracking-tight mb-8 sm:mb-12">
+        <h2 className="font-heading text-neutral-100 font-bold text-3xl sm:text-4xl tracking-tight mb-8 sm:mb-12">
           Contact
         </h2>
 
@@ -86,7 +86,7 @@ const Contact = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-100">Message sent!</h3>
+                <h3 className="font-heading text-xl font-semibold text-neutral-100">Message sent!</h3>
                 <p className="text-neutral-400 text-sm">
                   Thanks for reaching out. I&apos;ll get back to you soon.
                 </p>
