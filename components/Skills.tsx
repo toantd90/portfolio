@@ -101,7 +101,7 @@ const skills: SkillSection[] = [
     section: "Cloud, CI/CD & Observability",
     technologies: [
       {
-        imageUrl: "https://cdn.simpleicons.org/amazonwebservices/ffffff",
+        imageUrl: "https://api.iconify.design/logos:aws.svg",
         text: "AWS",
       },
       {
